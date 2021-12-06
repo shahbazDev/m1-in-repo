@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>m1repo</title>
+</head>
+<body>
+    var score= 0
+var readlineSync=require('readline-sync')
+var userName = readlineSync.question("what is your name ? ")
+console.log("welcome "+userName+", lets play do u know shabash ? ")
+function play (question,answer){
+  var userAnswer = readlineSync.question(question)
+  if(userAnswer.toUpperCase()===answer.toUpperCase()){
+    console.log("u are right")
+    score= score+1;
+  }else{
+    console.log("u are wrong")
+  }
+}
+
+
+
+var questions = [
+            questionOne = {question: "What is his age? ",  answer: "22"},
+            questionTwo = {question: "where did he went for school? ", answer: "james"},
+            questionThree = {question: "where did he went for college? ", answer: "saranathan"}
+          ]
+for (i=0; i<questions.length; i++){
+var currentQuestion=questions[i]
+play (currentQuestion.question,currentQuestion.answer)
+}
+console.log("your score is: ",score)
+
+//data of high score
+var highScore = [{name:"shabash", 
+                score:3},
+              {name:"rifa",
+                score:2}]
+                  console.log("highScores are:")
+for (i=0; i<highScore.length; i++){
+  currentHighScore= highScore[i]
+      console.log(currentHighScore.name)
+  console.log(currentHighScore.score)
+  console.log("-----")
+}
+
+
+
+
+
+
+    
+</body>
+</html>
